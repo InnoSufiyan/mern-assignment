@@ -2,25 +2,24 @@ const express = require('express');
 const app = express();
 const port = 5000;
 const cors = require('cors')
+const mongoose = require('mongoose')
+
+const URL = "mongodb+srv://sufiyan:sufiyanahmed@cluster0.gn26n.mongodb.net/mernassignment?retryWrites=true&w=majority"
+
+mongoose.connect(URL).then(()=>{
+    console.log("connected to mongoose")
+}).catch((err)=> {
+    console.log(err)
+})
+
+
 
 app.use(cors())
 
+app.use()
+
+
+
 app.listen(port, () => {
-    app.get("/posts", (req, res) => {
-        res.json(
-            [
-                {
-                    product: "bike",
-                    price: 5000,
-                    quantity: 15
-                },
-                {
-                    product: "car",
-                    price: 15000,
-                    quantity: 35
-                }
-            ]
-        )
-    })
-    console.log(`port running at ${port}`)
+      console.log(`port running at ${port}`)
 })
